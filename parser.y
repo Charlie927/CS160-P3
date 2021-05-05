@@ -28,6 +28,8 @@
 %right T_NOT
 %right U_MINUS
 
+%type<int> expr
+
 %%
 
 /* WRITEME: This rule is a placeholder, since Bison requires
