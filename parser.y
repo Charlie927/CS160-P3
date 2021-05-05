@@ -42,7 +42,21 @@ expr : expr T_PLUS expr
      | expr T_MINUS expr
      | expr T_MULT expr
      | expr T_DIV expr
+     | expr T_GT expr
+     | expr T_GTE expr
+     | expr T_EQUALS expr
+     | expr T_AND expr
+     | expr T_OR expr
+     | T_NOT expr
+     | T_ID
+     | T_ID T_DOT T_ID
+     | method
+     | T_LPAREN expr T_RPAREN
      | T_NUMBER
+     | T_TRUE
+     | T_FALSE
+     | T_NEW T_ID
+     | T_NEW T_ID T_LPAREN args T_RPAREN
      ;
 
 method : T_ID T_LPAREN args T_RPAREN
