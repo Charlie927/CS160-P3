@@ -45,6 +45,17 @@ expr : expr T_PLUS expr
      | T_NUMBER
      ;
 
+method : T_ID T_LPAREN args T_RPAREN
+       | T_ID T_DOT T_ID T_LPAREN args T_RPAREN
+       ;
+
+args : argsp
+     | 
+     ;
+
+argsp : argsp T_COMMA expr
+      : expr
+
 %%
 
 extern int yylineno;
