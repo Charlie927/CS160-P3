@@ -36,26 +36,14 @@
             at least one rule to run successfully. Replace
             this with your appropriate start rules. */
 start : expr
-      | method
       ;
 
-expr : expr T_PLUS expr { $$ = $1 + $3 }
-     | expr T_MINUS expr { $$ = $1 - $3 }
-     | expr T_MULT expr { $$ = $1 * $3 }
-     | expr T_DIV expr { $$ = $1 / $3 }
+expr : expr T_PLUS expr { $$ = $1 + $3; }
+     | expr T_MINUS expr { $$ = $1 - $3; }
+     | expr T_MULT expr { $$ = $1 * $3; }
+     | expr T_DIV expr { $$ = $1 / $3; }
      | T_NUMBER
      ;
-
-method : T_ID T_LPAREN args T_RPAREN
-       | T_ID T_DOT T_ID T_LPAREN args T_RPAREN
-       ;
-
-args : argsp
-     | 
-     ;
-
-argsp : argsp T_COMMA expr
-      : expr
 
 /* WRITME: Write your Bison grammar specification here */
 
