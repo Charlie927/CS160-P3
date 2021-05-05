@@ -56,7 +56,6 @@
 "extends"           { return T_EXTENDS; }
 "/*"                { return T_LCOMM; }
 "*/"                { return T_RCOMM; }
-"asdfqwer"          { return T_ID; }
 [ \t\n]             ;
 .                   { yyerror("invalid character"); }
 
