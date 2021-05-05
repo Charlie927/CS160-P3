@@ -13,8 +13,8 @@
 
 /* WRITEME: List all your tokens here */
 
-%token T_NUMBER T_DOT T_LPAREN T_RPAREN T_TRUE T_FALSE T_LCOMM T_RCOMM
-%token T_INT T_BOOL T_NONE
+%token T_DOT T_COMMA T_LPAREN T_RPAREN T_LCOMM T_RCOMM
+%token T_INT T_BOOL T_NONE T_NUMBER T_TRUE T_FALSE
 %token T_IF T_ELSE T_WHILE T_DO T_PRINT T_RETURN T_NEW T_EXTENDS
 %token<std::string> T_ID
 
@@ -37,10 +37,23 @@ start : expr
       | method
       ;
 
-expr : expr T_ADD expr { $$ = $1 + $3 }
+expr : expr T_PLUS expr { $$ = $1 + $3 }
      | expr T_MINUS expr { $$ = $1 - $3 }
      | expr T_MULT expr { $$ = $1 * $3 }
      | expr T_DIV expr { $$ = $1 / $3 }
+     | T_NUMBER
+     ;
+
+method : T_ID T_LPAREN args T_RPAREN
+       | T_ID T_DOT T_ID T_LPAREN args T_RPAREN
+       ;
+
+args : argsp
+     | 
+     ;
+
+argsp : argsp T_COMMA expr
+      : expr
 
 /* WRITME: Write your Bison grammar specification here */
 
