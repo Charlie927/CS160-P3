@@ -39,7 +39,7 @@
 "*"                 { return T_MULT; }
 "/"                 { return T_DIV; }
 "not"               { return T_NOT; }
-"***negative***"    { return U_MINUS }
+"***negative***"    { return U_MINUS; }
 "true"              { return T_TRUE; }
 "false"             { return T_FALSE; }
 "."                 { return T_DOT; }
