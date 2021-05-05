@@ -36,14 +36,14 @@
 start : expr
       ;
 
+/* WRITME: Write your Bison grammar specification here */
+
 expr : expr T_PLUS expr
      | expr T_MINUS expr
      | expr T_MULT expr
      | expr T_DIV expr
      | T_NUMBER
      ;
-
-/* WRITME: Write your Bison grammar specification here */
 
 %%
 
