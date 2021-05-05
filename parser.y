@@ -16,7 +16,7 @@
 %token T_DOT T_COMMA T_LPAREN T_RPAREN T_LCOMM T_RCOMM
 %token T_INT T_BOOL T_NONE T_NUMBER T_TRUE T_FALSE
 %token T_IF T_ELSE T_WHILE T_DO T_PRINT T_RETURN T_NEW T_EXTENDS
-/* %token<std::string> T_ID */
+%token T_ID
 
 /* WRITEME: Specify precedence here */
 

@@ -54,6 +54,7 @@
 "return"            { return T_RETURN; }
 "new"               { return T_NEW; }
 "extends"           { return T_EXTENDS; }
+[a-zA-Z][a-zA-Z0-9]* { return T_ID; }
 "/*"                { return T_LCOMM; }
 "*/"                { return T_RCOMM; }
 [ \t\n]             ;
