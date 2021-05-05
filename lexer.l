@@ -25,7 +25,7 @@
 
   /* WRITEME: Write your Flex token rules here */
 
-[0-9]+              { return T_NUMBER; }
+[0-9]+              { yylval = atoi(yytext) ; return T_NUMBER; }
 "."                 { return T_DOT; }
 "("                 { return T_LPAREN; }
 ")"                 { return T_RPAREN; }
