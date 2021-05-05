@@ -28,8 +28,6 @@
 %right T_NOT
 %right U_MINUS
 
-%type<int> expr
-
 %%
 
 /* WRITEME: This rule is a placeholder, since Bison requires
@@ -38,11 +36,11 @@
 start : expr
       ;
 
-expr : expr T_PLUS expr { $$ = $1 + $3; }
-     | expr T_MINUS expr { $$ = $1 - $3; }
-     | expr T_MULT expr { $$ = $1 * $3; }
-     | expr T_DIV expr { $$ = $1 / $3; }
-     | T_NUMBER { $$ = $1; }
+expr : expr T_PLUS expr
+     | expr T_MINUS expr
+     | expr T_MULT expr
+     | expr T_DIV expr
+     | T_NUMBER
      ;
 
 /* WRITME: Write your Bison grammar specification here */
