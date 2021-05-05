@@ -33,8 +33,14 @@
 /* WRITEME: This rule is a placeholder, since Bison requires
             at least one rule to run successfully. Replace
             this with your appropriate start rules. */
-Start :
+start : expr
+      | method
       ;
+
+expr : expr T_ADD expr { $$ = $1 + $3 }
+     | expr T_MINUS expr { $$ = $1 - $3 }
+     | expr T_MULT expr { $$ = $1 * $3 }
+     | expr T_DIV expr { $$ = $1 / $3 }
 
 /* WRITME: Write your Bison grammar specification here */
 

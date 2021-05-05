@@ -15,9 +15,6 @@
             definitions here:
             ftp://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html#SEC10 */
 
-digit            [0-9]
-id            [a-zA-Z][a-zA-Z]*
-
 /* WRITEME: If you are going to use start conditions, write them here.
             You can find more information on start conditions here:
             ftp://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/html_mono/flex.html#SEC11
@@ -28,7 +25,7 @@ id            [a-zA-Z][a-zA-Z]*
 
   /* WRITEME: Write your Flex token rules here */
 
-{digit}+            { return T_NUMBER; }
+[0-9]+              { return T_NUMBER; }
 "."                 { return T_DOT; }
 "("                 { return T_LPAREN; }
 ")"                 { return T_RPAREN; }
@@ -59,8 +56,8 @@ id            [a-zA-Z][a-zA-Z]*
 "extends"           { return T_EXTENDS; }
 "/*"                { return T_LCOMM; }
 "*/"                { return T_RCOMM; }
-{id}                { return T_ID; }
-[ \t\n]             ;
+"asdfqwer"          { return T_ID; }
+[ \t\n]             { }
 .                   { yyerror("invalid character"); }
 
 %%
