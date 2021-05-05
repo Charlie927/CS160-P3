@@ -42,7 +42,7 @@ expr : expr T_PLUS expr { $$ = $1 + $3; }
      | expr T_MINUS expr { $$ = $1 - $3; }
      | expr T_MULT expr { $$ = $1 * $3; }
      | expr T_DIV expr { $$ = $1 / $3; }
-     | T_NUMBER
+     | T_NUMBER { $$ = $1; }
      ;
 
 /* WRITME: Write your Bison grammar specification here */
